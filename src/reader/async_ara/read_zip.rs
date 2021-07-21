@@ -6,12 +6,12 @@ use ara::ReadAt;
 use async_trait::async_trait;
 use std::io::Cursor;
 
-#[async_trait(?Send)]
+#[async_trait]
 pub trait AsyncReadZip {
     async fn read_zip(&self) -> Result<Archive, Error>;
 }
 
-#[async_trait(?Send)]
+#[async_trait]
 impl<T> AsyncReadZip for T
 where
     T: ReadAt,
